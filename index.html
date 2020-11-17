@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная №1</title>
+    <link rel="stylesheet" href="stylecss/list.css">
+</head>
+
+<body background="pictures/main_bg.jpg">
+<div id="header">
+    <header>
+        <a target="_blank" href="https://vk.com/jesvslovesme">Горбунова Екатерина Дмитриевна</a>
+        группа Р3212, Вариант №2309
+    </header>
+    <hr>
+</div>
+<div class="main_bg">
+    <div id="img">
+        <img class="frame" src="pictures/areas.png" alt="Область попадания" height="300" width="300">
+    </div>
+
+    <form name="postOnServer" action="server.php" method="post">
+
+        <div class="coordinates">
+
+            <div class="input">
+                <label>X:</label>
+                <input class="tfocus" id="X-input" type="text" name="X-input" size="25"
+                       placeholder="Введите число от -3 до 5" onmouseover="checkX()" onchange="check()">
+                <p> <span class="comment" id="x-comment"></span> </p>
+            </div>
+
+            <div class="input">
+                <label>Y:</label>
+                <input class="tfocus" type="text" name="Y-input" size="25"
+                       placeholder="Введите число от -3 до 5" onmouseover="checkY()"> <p> <span class="comment" id="y-comment" onchange="check()"></span> </p>
+            </div>
+
+            <div class="input">
+                <label>R:</label>
+                <input class="tfocus" type="text" name="R-input" size="25"
+                       placeholder="Введите число от 2 до 5" onmouseover="checkR()" onchange="check()">
+                <p> <span class="comment" id="r-comment"></span> </p>
+            </div>
+
+            <div>
+                <label id="check">Check:</label>
+                <input class="tfocus" id="button" type="submit" value="Отправить" disabled></td>
+                <span class="error" id="incorrectValuesError" style="display:none">Вы ввели некорректные значения. Попробуйте снова</span>
+            </div>
+            </div>
+    </form>
+    <script src="checker.js"></script>
+
+</body>
+</html>

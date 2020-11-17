@@ -1,0 +1,101 @@
+body{
+    background-color: cadetblue;
+}
+
+.main_bg{
+    background: url("pictures/main_bg.jpg") 100% 100% no-repeat;
+    background-position-y: bottom;
+    width: 100%;
+    background-size: cover;
+    padding-bottom: 200px;
+
+}
+
+.input{
+    text-align: center;
+}
+
+header{
+    font-family: Bahnschrift;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+a{
+    color: black;
+}
+
+.frame{
+    border: darkred 3px solid;
+}
+
+h1{
+    font-family: Bahnschrift;
+    font-size: 20px;
+    text-align: center;
+}
+
+table{
+    table-layout: fixed;
+    width: 1200px;
+    text-align: center;
+    background: burlywood;
+}
+
+.tfocus:focus{
+    border: 1px solid #29B0D9;
+    background: #ffe;
+}
+
+.input{
+    margin: 5px;
+}
+
+#img{
+    padding: 30px;
+    text-align: center;
+}
+#button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    background-color: cornflowerblue;
+    margin: 10px;
+    font-size: medium;
+}
+#out{
+    margin-right: 315px;
+    width: 1200px;
+    text-align: center;
+}
+
+#out  td.scroll{
+    background: burlywood;
+    width: 100px;
+    overflow-x: scroll;
+}
+
+.input > label{
+    color: burlywood;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.error{
+    color:red;
+    font-family: Arial;
+}
+
+.comment{
+    color: bisque;
+}
+
+#check{
+    position: relative;
+    left: 45%;
+    transform: translate(-50%, 0);
+    color: black;
+    background: burlywood;
+}
+
