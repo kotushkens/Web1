@@ -1,88 +1,69 @@
 let x, y, r;
 
 function isNum(n) {
-    let regexp = /^-?\d[\.,]?\d*$/;
-    let val = regexp.test(n);
-    return val;
+    return (!isNaN(parseFloat(n)) && isFinite(n))
 }
 
-//document.getElementById("X-input").addEventListener('onclick', checkX);
 
-
-function checkX() {
-    x = document.getElementsByName("X-input")[0].value;
-    if (isNum(x.toString()) && (x.length > 0) && (x >= -2 && x <= 5)) {
-        x = x.replace(',', '.');
-        x = parseFloat(x);
-        console.log(x)
+function validateX() {
+    x = document.getElementById('X-input').value.replace(",", ".");
+    if (x === undefined) {
+        document.getElementById('x-comment').innerHTML = "X не введён";
+        return false;
+    } else if (!isNum(x)) {
+        document.getElementById('x-comment').innerHTML ="X не число";
+        return false;
+    } else if (!((x >= -3) && (x <= 5))) {
+        document.getElementById('x-comment').innerHTML = "X не входит в область допустимых значений";
+        return false;
+    } else {
         document.getElementById('x-comment').innerHTML = " ";
-        return !isNaN(x);
-    } else {
-        console.log('cjefiew')
-        document.getElementById('x-comment').innerHTML = "Выберите другое значение";
-        return false;
+        return true;
     }
-}
 
-function checkY() {
-    y = document.getElementsByName("Y-input")[0].value;
-    if (isNum(y.toString()) && (y.length > 0) && (y >= -2 && y <= 5)) {
-        y = y.replace(',', '.');
-        y = parseFloat(y);
+}
+function validateY() {
+    y = document.getElementById('Y-input').value.replace(",", ".");
+    if (y === undefined) {
+        document.getElementById('y-comment').innerHTML = "Y не введён";
+        return false;
+    } else if (!isNum(y)) {
+        document.getElementById('y-comment').innerHTML = "Y не число";
+        return false;
+    } else if (!((y >= -3) && (y <= 5))) {
+        document.getElementById('y-comment').innerHTML = "Y не входит в область допустимых значений";
+        return false;
+    } else {
         document.getElementById('y-comment').innerHTML = " ";
-        return !isNaN(y);
-    } else {
-        document.getElementById('y-comment').innerHTML = "Выберите другое значение";
-    return false;}
+        return true;
+    }
 }
 
-
-function checkR() {
-    r = document.getElementsByName("R-input")[0].value;
-    if (isNum(r.toString()) && (r.length > 0) && (r >= 2 && r <= 5)) {
-        r = r.replace(',', '.');
-        r = parseFloat(r);
-        document.getElementById('r-comment').innerHTML = " ";
-        return  !isNaN(r);
-    } else {
-        document.getElementById('r-comment').innerHTML = "Выберите другое значение";
+function validateR() {
+    r = document.getElementById('R-input').value.replace(",", ".");
+    if (r === undefined) {
+        document.getElementById('r-comment').innerHTML ="R не введён";
         return false;
+    } else if (!isNum(r)) {
+        document.getElementById('r-comment').innerHTML ="R не число";
+        return false;
+    } else if (!((r >= 2) && (r <= 5))) {
+        document.getElementById('r-comment').innerHTML = "R не входит в область допустимых значений";
+        return false;
+    } else {
+        document.getElementById('r-comment').innerHTML = " ";
+        return true;
     }
 }
 
-const button = document.getElementById('button');
-const valError =   document.getElementById('incorrectValuesError');
 
-
-/*button.addEventListener('click', check);
-button.addEventListener('mouseover', refreshButton);*/
-//document.getElementById('x-input').addEventListener(input, checkX);
-/*
-function refreshButton() {
-    if (checkX() && checkY() && checkR()) {
-        button.disabled = false;
-        document.getElementById('incorrectValuesError').style.display = 'none';
-    }
-}
 
 function check() {
-    if (!(checkX() && checkY() && checkR())) {
-        button.disabled = true;
-        document.getElementById('incorrectValuesError').style.display = 'block';
-    } else {
-        button.disabled = false;
-        document.getElementById('incorrectValuesError').style.display = 'none';
-    }
-}*/
-
-function check() {
-    if (checkX() && checkY() && checkR()){
-        alert("Кнопка разблокирована");
-        button.disabled = false;
-    } else {
-        button.disabled = true;
+    if (validateX() && validateY() && validateR()){
+        document.getElementById('button').disabled = false;
+        document.getElementById('incorrectValuesError').innerHTML = ' ';
+        } else {
+        document.getElementById('button').disabled = true;
+        document.getElementById('incorrectValuesError').innerHTML = 'Проверьте введенные значения';
     }
 }
-
-
-

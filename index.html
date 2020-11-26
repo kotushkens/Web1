@@ -27,31 +27,33 @@
             <div class="input">
                 <label>X:</label>
                 <input class="tfocus" id="X-input" type="text" name="X-input" size="25"
-                       placeholder="Введите число от -3 до 5" onmouseover="checkX()" onchange="check()">
+                       placeholder="Введите число от -3 до 5" onmouseover="validateX()" onchange="check()" required>
                 <p> <span class="comment" id="x-comment"></span> </p>
             </div>
 
             <div class="input">
                 <label>Y:</label>
-                <input class="tfocus" type="text" name="Y-input" size="25"
-                       placeholder="Введите число от -3 до 5" onmouseover="checkY()"> <p> <span class="comment" id="y-comment" onchange="check()"></span> </p>
+                <input class="tfocus" id="Y-input" type="text" name="Y-input" size="25"
+                       placeholder="Введите число от -3 до 5" onmouseover="validateY()" onchange="check()" required>
+                <p> <span class="comment" id="y-comment"></span> </p>
             </div>
 
             <div class="input">
                 <label>R:</label>
-                <input class="tfocus" type="text" name="R-input" size="25"
-                       placeholder="Введите число от 2 до 5" onmouseover="checkR()" onchange="check()">
+                <input class="tfocus" type="text" id="R-input" size="25" name="R-input"
+                       placeholder="Введите число от 2 до 5" onmouseover="validateR()" onchange="check()" required>
                 <p> <span class="comment" id="r-comment"></span> </p>
             </div>
 
             <div>
                 <label id="check">Check:</label>
-                <input class="tfocus" id="button" type="submit" value="Отправить" disabled></td>
-                <span class="error" id="incorrectValuesError" style="display:none">Вы ввели некорректные значения. Попробуйте снова</span>
+                <input class="tfocus" id="button" type="submit" value="Отправить" onclick="check()"></td>
+                <span class="error" id="incorrectValuesError"></span>
+                <span class="error" id="httpError"></span>
             </div>
-            </div>
+        </div>
     </form>
+</div>
     <script src="checker.js"></script>
-
 </body>
 </html>
